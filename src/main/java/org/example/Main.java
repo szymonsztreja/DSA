@@ -1,6 +1,9 @@
 package org.example;
 
 import org.example.algorithims.*;
+import org.example.searching.BinarySearch;
+import org.example.searching.LinearSearch;
+import org.example.searching.SearchingAlgorithim;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -17,9 +20,14 @@ public class Main {
         int[] arr = rand.ints(20, 0, 100).toArray();
 
         System.out.println(Arrays.toString(arr));
-        SortingAlgorithim sortingAlgorithim = new QuickSort();
+        SortingAlgorithim sortingAlgorithim = new MergeSort();
         sortingAlgorithim.sort(arr);
         System.out.println(Arrays.toString(arr));
+
+        SearchingAlgorithim sa = new LinearSearch();
+        System.out.println(sa.search(arr, 42));
+        sa = new BinarySearch();
+        System.out.println(sa.search(arr, 42));
 
 
     }
